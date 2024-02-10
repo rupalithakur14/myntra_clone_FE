@@ -18,10 +18,19 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+  @apply !bg-transparent !h-full;
+}
+.css-hyum1k-MuiToolbar-root {
+  @apply !h-full;
 }

@@ -1,0 +1,55 @@
+.main_container {
+  min-width: 252px;
+  width: 252px;
+  height: 100%;
+  margin-top: 12px;
+}
+.header_wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+}
+.heading {
+  font-weight: 700;
+}
+.clear_all_text {
+  font-weight: 700;
+  color: #ff3f6c;
+  font-size: 13px;
+  cursor: pointer;
+}
+.border_wrapper {
+  border-top: 1px solid #e9e9ed;
+  border-right: 1px solid #e9e9ed;
+  margin-top: 15px;
+}
+.filter_wrapper {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  border-bottom: 1px solid #e9e9ed;
+  position: relative;
+  border-right: 1px solid #edebef;
+  width: 100%;
+}
+.person_categ {
+  font-size: 14px !important;
+  cursor: pointer;
+  color: #282c3f;
+  font-weight: 700;
+}
+.filter_head {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0 0 18px;
+  color: #282c3f;
+}
+.filters {
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 17px;
+  color: #282c3f;
+  font-size: 14px;
+}

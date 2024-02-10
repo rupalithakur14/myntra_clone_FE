@@ -1,0 +1,29 @@
+.main_container {
+  margin: 0px 120px;
+  z-index: 5;
+  padding: 30px 4px 40px 4px;
+  background: #fafbfc;
+}
+.first_row {
+  display: flex;
+  gap: 48px;
+}
+.list_header {
+  @apply uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 19px;
+}
+.list_item {
+  color: #696b79;
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+  padding-bottom: 5px;
+  cursor: pointer;
+  line-height: normal;
+}
+.footer_download_img {
+  width: 139px;
+  height: 42px;
+}

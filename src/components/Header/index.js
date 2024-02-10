@@ -6,31 +6,30 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import MoreIcon from "@mui/icons-material/MoreVert";
+
 import styles from "./styles.module.css";
+import PersonOutlineRoundedIcon from "@mui/icons-material/PersonOutlineRounded";
+import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
+import WorkOutlineRoundedIcon from "@mui/icons-material/WorkOutlineRounded";
 
 export default function Header() {
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
+    color: "#696e79",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: "#f5f5f6",
     "&:hover": {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      backgroundColor: "#f5f5f6",
     },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: "100%",
+    // marginRight: theme.spacing(2),s
+    marginLeft: "40px",
+    width: "200px",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
-      width: "auto",
+      marginLeft: "40px",
+      width: "200px",
     },
   }));
 
@@ -112,103 +111,71 @@ export default function Header() {
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <div className={styles.main_container}>
+      <AppBar position="static" classes={{ paper: styles.customs }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <div>
+            <img
+              src="https://i.pinimg.com/564x/50/f2/d1/50f2d1c76647d1a057947e03a503f8d3.jpg"
+              className={styles.logo}
+            />
+          </div>
           <div className={styles.menu_wrapper}>
             {menuList.map((item, index) => {
-              return <p key={index}>{item}</p>;
+              return (
+                <p className={styles.menu_item} key={index}>
+                  {item}
+                </p>
+              );
             })}
           </div>
+          {/* <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search for products and more"
+              inputProps={{ "aria-label": "search" }}
+              style={{ width: "200px" }}
+            />
+          </Search>
+          <Box sx={{ flexGrow: 1 }} /> */}
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Search for products, brands and more"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
               aria-label="show 4 new mails"
-              color="inherit"
+              className="flex flex-col"
             >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
+              {/* <Badge badgeContent={4} color="error"> */}
+              <PersonOutlineRoundedIcon />
+              <p className={styles.right_item}>Profile</p>
+
+              {/* </Badge> */}
             </IconButton>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
-              color="inherit"
+              className="flex flex-col"
             >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
+              {/* <Badge badgeContent={17} color="error"> */}
+              <FavoriteBorderRoundedIcon />
+              <p className={styles.right_item}>Wishlist</p>
+
+              {/* </Badge> */}
             </IconButton>
             <IconButton
               size="large"
@@ -217,27 +184,14 @@ export default function Header() {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit"
+              className="flex flex-col"
             >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
+              <WorkOutlineRoundedIcon />
+              <p className={styles.right_item}>Bag</p>
             </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </Box>
+    </div>
   );
 }
