@@ -9,7 +9,6 @@ const ProductList = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
-  console.log(id, "hhh");
   const arr = ["", "", "", "", ""];
   const { categoryData, isLoading, error } = useSelector(
     (state) => state.categoryData.value
