@@ -1,0 +1,6 @@
+.banner {
+  height: auto;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}

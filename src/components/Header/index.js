@@ -9,13 +9,19 @@ import InputBase from "@mui/material/InputBase";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-
 import styles from "./styles.module.css";
 import PersonOutlineRoundedIcon from "@mui/icons-material/PersonOutlineRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import WorkOutlineRoundedIcon from "@mui/icons-material/WorkOutlineRounded";
+import { Button } from "@mui/material";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const search = searchParams.get("search");
+  console.log(search, "kkkkk");
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
     color: "#696e79",
@@ -91,6 +97,7 @@ export default function Header() {
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
+      className={styles.profile_drop}
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: "top",
@@ -105,8 +112,37 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <div>
+        <Typography className={styles.profile_dropdown_welcome}>
+          Welcome
+        </Typography>
+        <Typography className={styles.profile_dropdown_tagline}>
+          To access account and manage orders
+        </Typography>
+        <Button
+          onClick={() => router.push(`/login`)}
+          className={styles.login_btn}
+        >
+          Login/Signup
+        </Button>
+        <div className={styles.prof_drop_menu_item}>
+          <MenuItem className={styles.profile_item} onClick={handleMenuClose}>
+            Order
+          </MenuItem>
+          <MenuItem className={styles.profile_item} onClick={handleMenuClose}>
+            Wishlist
+          </MenuItem>
+          <MenuItem className={styles.profile_item} onClick={handleMenuClose}>
+            Gift Cards
+          </MenuItem>
+          <MenuItem className={styles.profile_item} onClick={handleMenuClose}>
+            Contact Us
+          </MenuItem>
+          <MenuItem className={styles.profile_item} onClick={handleMenuClose}>
+            Myntra Insiders
+          </MenuItem>
+        </div>
+      </div>
     </Menu>
   );
 
@@ -157,8 +193,11 @@ export default function Header() {
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
-              aria-label="show 4 new mails"
               className="flex flex-col"
+              aria-label="primary-search-account-menu"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
             >
               {/* <Badge badgeContent={4} color="error"> */}
               <PersonOutlineRoundedIcon />
@@ -168,8 +207,11 @@ export default function Header() {
             </IconButton>
             <IconButton
               size="large"
-              aria-label="show 17 new notifications"
               className="flex flex-col"
+              aria-label="wishlist"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              // onClick={handleProfileMenuOpen}
             >
               {/* <Badge badgeContent={17} color="error"> */}
               <FavoriteBorderRoundedIcon />
@@ -180,10 +222,10 @@ export default function Header() {
             <IconButton
               size="large"
               edge="end"
-              aria-label="account of current user"
+              aria-label="cart-items"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              // onClick={handleProfileMenuOpen}
               className="flex flex-col"
             >
               <WorkOutlineRoundedIcon />
@@ -191,6 +233,7 @@ export default function Header() {
             </IconButton>
           </Box>
         </Toolbar>
+        {renderMenu}
       </AppBar>
     </div>
   );

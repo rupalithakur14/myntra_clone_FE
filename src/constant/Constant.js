@@ -9,7 +9,16 @@ export const HomePageImages = {
 
   downloadImage:
     "https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2024/2/1/9eb6dcc4-a508-47ce-a6c4-dcfab0c991821706788570836-App-Install-Banner-----3.jpg",
+  bannerImageForMen:
+    "https://assets.myntassets.com/w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2024/2/5/827b697d-155a-4895-92ad-75fbb07ca8a01707154477940-Desktop_Hp_01.jpg",
+  bannerImageForWomen:
+    "https://assets.myntassets.com/w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2024/2/5/f6857071-a235-49de-a659-1ab08bcd41d11707154477945-Desktop_Hp_02.jpg",
+  loginImage:
+    "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2023/10/26/f96c9b3f-6c5c-4383-8f11-12de043faa501698300150501-Flat_400--1-.jpg",
+  otpImage:
+    "https://constant.myntassets.com/pwa/assets/img/3a438cb4-c9bf-4316-b60c-c63e40a1a96d1548071106233-mobile-verification.jpg",
 };
+
 export const FooterData = {
   onlineshooping: ["Men", "Women", "Kids", "Beauty", "Home & Living"],
   usefulLinks: ["Blog", "Careers", "Site Map", "Cleartrip"],

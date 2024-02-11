@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import { HomePageImages, authorization } from "@/constant/Constant";
-import axios from "axios";
-import { baseURL } from "@/network/axios";
-import { endPoints } from "@/network/endPoints";
+import { HomePageImages } from "@/constant/Constant";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct } from "@/Redux/slice";
+import { fetchProduct } from "@/Redux/productSlice";
 import { useRouter } from "next/navigation";
 
 const ShopByCategory = () => {
@@ -69,7 +66,7 @@ const ShopByCategory = () => {
             <div
               className={styles.card}
               key={index}
-              onClick={() => router.push(`/${item.catName}`)}
+              onClick={() => router.push(`/${item.catName}?id=${item?._id}`)}
             >
               <img src={item?.catImage} className={styles.card_img} />
               <p className={styles.card_desc1}>{item?.catName}</p>

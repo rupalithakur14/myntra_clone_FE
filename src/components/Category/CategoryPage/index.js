@@ -10,6 +10,7 @@ import ProductList from "../ProductList";
 const CategoryPage = () => {
   const params = useParams();
   const router = useRouter();
+
   const count = 12999;
 
   return (

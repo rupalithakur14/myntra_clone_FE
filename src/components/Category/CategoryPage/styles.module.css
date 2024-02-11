@@ -37,6 +37,7 @@
   align-items: center;
   width: 100%;
   margin-bottom: 10px;
+  padding-left: 23px;
 }
 .left_sub_header {
   display: flex;

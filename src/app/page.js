@@ -6,6 +6,7 @@ import ShopByCategory from "@/components/Home/ShopByCategory";
 import DownloadBanner from "@/components/Home/DownloadBanner";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Banner from "@/components/Home/Banner";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Header />
       <SaleAnnouncement />
       <OfferAnnouncement />
+      <Banner />
       <ShopByCategory />
       <DownloadBanner />
       <Footer />
