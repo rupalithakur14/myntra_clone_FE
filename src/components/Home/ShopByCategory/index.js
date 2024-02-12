@@ -37,26 +37,6 @@ const ShopByCategory = () => {
   //   getCategoryData();
   // }, []);
 
-  const arr = [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ];
   return (
     <div className={styles.main_container}>
       <img src={HomePageImages.shopByCategory} />

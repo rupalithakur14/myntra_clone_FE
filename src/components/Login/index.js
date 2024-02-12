@@ -1,15 +1,12 @@
 // pages/Login.js
 import React, { useState } from "react";
-
 import styles from "./styles.module.css"; // Import CSS module
-import { useRouter } from "next/navigation";
 import { HomePageImages } from "@/constant/Constant";
 import axios from "axios";
 import { baseURL } from "@/network/axios";
 import { endPoints } from "@/network/endPoints";
 
 const Login = () => {
-  const router = useRouter();
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
   const [error, setError] = useState("");
@@ -24,7 +21,6 @@ const Login = () => {
         .post(baseURL + endPoints.getOtp, body)
         .then((res) => {
           console.log(res);
-          router.push("/otpLogin");
         })
         .catch((err) => console.log(err));
       // setContact(e.target.value);

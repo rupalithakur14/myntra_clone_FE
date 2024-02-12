@@ -2,6 +2,7 @@
   height: 80px;
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 .menu_wrapper {
   display: flex;
